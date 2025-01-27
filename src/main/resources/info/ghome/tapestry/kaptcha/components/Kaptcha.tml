@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter">
+
+
+<t:zone t:id="kaptchaZone" id="kaptchaZone">
+
+	<p>
+		<img src="data:image/jpeg;base64, ${kaptchaImage}" /> <span>&nbsp;
+			<t:eventLink t:event="refresh" t:zone="^">
+				<i class="fa-solid fa-rotate-right"></i>
+			</t:eventLink>
+		</span>
+	</p>
+
+</t:zone>
+
+
+</html>
