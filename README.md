@@ -7,27 +7,27 @@ Tapestry 5 Module with a Kaptcha Component based on [kaptcha](https://github.com
 ### AppModule
 
 ```java
-	@ImportModule(KaptchaModule.class)
-	public class AppModule {
+@ImportModule(KaptchaModule.class)
+public class AppModule {
 ```
 
 ### Component
 
 ```java
-		@Component(parameters = { "value=kaptchaText" })
-		private TextField kaptchaField;
-	
-		@Component
-		private Kaptcha kaptcha;
-	
-		@Environmental
-		private ValidationTracker validationTracker;
-	
-		void onValidateFromKaptchaField(String kaptchaText) {
-			if (!kaptcha.valid(kaptchaText)) {
-				validationTracker.recordError(kaptchaField, "Ungültige Eingabe");
-			}
+	@Component(parameters = { "value=kaptchaText" })
+	private TextField kaptchaField;
+
+	@Component
+	private Kaptcha kaptcha;
+
+	@Environmental
+	private ValidationTracker validationTracker;
+
+	void onValidateFromKaptchaField(String kaptchaText) {
+		if (!kaptcha.valid(kaptchaText)) {
+			validationTracker.recordError(kaptchaField, "Ungültige Eingabe");
 		}
+	}
 ```
 
 ### Template
